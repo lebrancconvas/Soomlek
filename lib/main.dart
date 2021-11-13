@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Text(
-              'Enter Your Name', 
+              'Type your name to join the game.',  
             ),
             TextField(
               decoration: InputDecoration(
@@ -104,6 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 labelText: "Enter your name." 
               )
             ),
+            ElevatedButton(
+              onPressed: null, 
+              child: Text("Submit.")
+            )
           ],
         ),
       ),
