@@ -94,13 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
+          children: const <Widget>[
+            Text(
               'Enter Your Name', 
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(), 
+                labelText: "Enter your name." 
+              )
             ),
           ],
         ),
