@@ -21,7 +21,7 @@ class MyFormScreenState extends State<FormScreen> {
             TextFormField(
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "Please enter some text.";
+                  return "Required Username.";
                 }
                 return null;
               },
@@ -29,7 +29,7 @@ class MyFormScreenState extends State<FormScreen> {
             ElevatedButton(onPressed: () { 
               if (_formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Processing Data")),
+                  const SnackBar(content: Text("Success.")), 
                 );
               }
             },
