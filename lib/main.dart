@@ -8,12 +8,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
       title: "Soomlek",
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const FormScreen(),  
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Soomlek."), 
+        ),
+        body: const FormScreen(), 
+      )  
     ); 
   }
 }
