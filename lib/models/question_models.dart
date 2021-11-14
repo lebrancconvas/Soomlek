@@ -1,4 +1,4 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
+// ignore_for_file: import_of_legacy_library_into_null_safe, unnecessary_null_comparison
 
 import "package:equatable/equatable.dart";
 
@@ -24,5 +24,18 @@ class Question extends Equatable {
         question,
         correctAnswer,
         answers,
-      ]; 
+      ];
+
+  factory Question.fromMap(Map<String, dynamic> map) {
+    if (map == null) throw ArgumentError("Unexpected type of data."); 
+    return Question(
+      category: map["category"] ?? "",
+      difficulty: map["difficulty"] ?? "",
+      question: map["question"] ?? "",
+      correctAnswer: map["correctAnswer"] ?? "",
+      answers: List<String>.from(map["incorrect_answers"] ?? [])
+        ..add(map["correct_answer"] ?? "")
+        ..shuffle(),
+    );
+  }
 }
